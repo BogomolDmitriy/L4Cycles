@@ -7,9 +7,10 @@ namespace Lesson4
     {
         static void Main(string[] args)
         {
-            int userInput = Convert.ToInt32(Console.ReadLine());
+            int userInput;
             do
             {
+                userInput = Convert.ToInt32(Console.ReadLine());
                 switch (userInput)
                 {
                     case 1:
@@ -17,20 +18,25 @@ namespace Lesson4
                             Console.WriteLine($"Task№1");
 
                             Console.Write("Enter A=");
-                            double A = Convert.ToDouble(Console.ReadLine());
+                            int A = Convert.ToInt32(Console.ReadLine());
                             Console.Write("Enter B=");
-                            double B = Convert.ToDouble(Console.ReadLine());
-                            Les4.Task1(A, B);
+                            int B = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine($"{Les4.Task1(A, B)}");
                             break;
                         }
+
                     case 2:
                         {
                             Console.WriteLine($"Task№2");
                             Console.Write("Enter A=");
-                            double A = Convert.ToDouble(Console.ReadLine());
-
+                            int A = Convert.ToInt32(Console.ReadLine());
                             Les4.Task2(A);
-                            break;
+                            for (int i = 0; i < Les4.Task2(A).Length; i++)
+                            {
+                                Console.Write(Les4.Task2(A)[i] + " ");
+                            }
+
+                                break;
                         }
                     case 3:
                         {
@@ -67,7 +73,7 @@ namespace Lesson4
                             Console.Write("Enter N=");
                             double N = Convert.ToDouble(Console.ReadLine());
 
-                            Les4.Task6(N);
+                            Console.WriteLine($"{Les4.Task6(N)}");
                             break;
                         }
                     case 7:
@@ -78,7 +84,7 @@ namespace Lesson4
                             Console.Write("Enter B=");
                             double B = Convert.ToDouble(Console.ReadLine());
 
-                            Les4.Task7(A, B);
+                            Console.WriteLine($"{Les4.Task7(A, B)}");
                             break;
                         }
                     case 8:
@@ -92,7 +98,7 @@ namespace Lesson4
                             Console.Write("Enter A=");
                             double A = Convert.ToDouble(Console.ReadLine());
 
-                            Les4.Task9(A);
+                            Console.WriteLine($"{Les4.Task9(A)}");
                             break;
                         }
                     case 10:
@@ -101,16 +107,24 @@ namespace Lesson4
                             Console.Write("Enter A=");
                             int A = Convert.ToInt32(Console.ReadLine());
 
-                            Les4.Task10(A);
+                            for (int i = 0; i < Les4.Task10(A).Length; i++)
+                            {
+                                Console.Write(Les4.Task10(A)[i]);
+                            }
+
                             break;
                         }
                     case 11:
                         {
                             Console.WriteLine($"Task№11");
                             Console.Write("Enter N=");
-                            double N = Convert.ToDouble(Console.ReadLine());
+                            int N = Convert.ToInt32(Console.ReadLine());
 
-                            Les4.Task11(N);
+                            for (int i = 0; i < Les4.Task11(N).Length; i++)
+                            {
+                                    Console.Write(Les4.Task11(N)[i]+" ");
+                            }
+
                             break;
                         }
                     case 12:
@@ -122,6 +136,7 @@ namespace Lesson4
                             int B = Convert.ToInt32(Console.ReadLine());
 
                             Les4.Task12(A, B);
+                            Console.Write(Les4.Task12(A, B));
                             break;
                         }
                 }

@@ -4,24 +4,43 @@ namespace LibraryLesson4
 {
     public class Les4
     {
-        public static void Task1(double A, double B)
+        public static int Task1(int A, int B)
         {
-            for (int i = 1; i <= 7; i++)
+            int degree = A;
+            for (int i = 2; i <= B; i++)
             {
-                A = Math.Pow(A, B);
-                Console.WriteLine(A);
+                degree = degree * A;
             }
+
+            return (degree);
+
         }
-        public static void Task2(double A)
+
+        public static int[] Task2(int A)
         {
+            int box = 0;
             for (int i = 1; i <= 1000; i++)
             {
                 if ((i % A) == 0)
                 {
-                    Console.WriteLine(i);
+                    box = box + 1;
                 }
             }
+
+            int temp = 0;
+            int[] arr = new int[box];
+            for (int i = 1; i <= 1000; i++)
+            {
+                if ((i % A) == 0)
+                {
+                    arr[temp] = i;
+                    temp++;
+                }
+            }
+
+            return arr;
         }
+
         public static double Task3(double A)
         {
             double Conclusion = 0;
@@ -33,9 +52,10 @@ namespace LibraryLesson4
                     Conclusion = Conclusion + 1;
                 }
             }
-            return (Conclusion);
 
+            return (Conclusion);
         }
+
         public static double Task4(double A)
         {
             double divider = 0;
@@ -49,6 +69,7 @@ namespace LibraryLesson4
             }
             return (divider);
         }
+
         public static double Task5(double A, double B)
         {
             double amount = 0;
@@ -70,6 +91,7 @@ namespace LibraryLesson4
             }
             return (amount);
         }
+
         public static double Task6(double N)
         {
             double n1 = 1;
@@ -85,6 +107,7 @@ namespace LibraryLesson4
             return (n3);
 
         }
+
         public static double Task7(double A, double B)
         {
             while (A != 0 && B != 0)
@@ -100,6 +123,7 @@ namespace LibraryLesson4
             }
             return (A + B);
         }
+
         public static double Task9(double N)
         {
             double amount = 0;
@@ -111,47 +135,83 @@ namespace LibraryLesson4
                     amount = amount + 1;
                 }
             }
+
             return (amount);
         }
-        public static string Task10(int A)
-        {
-            string amount = "";
 
+        public static int[] Task10(int A)
+        {
+            int[] arr = new int[A.ToString().Length];
+            int box = 0;
             while (A != 0)
             {
-                int temp = A % 10;
-                string tempS = Convert.ToString(temp);
-                A = A / 10;
-                amount = amount + tempS;
+                int number = A % 10;
+                arr[box] = number;
+                box++;
+                A /= 10;
             }
-            return (amount);
-        }
-        public static void Task11(double N)
-        {
-            double Even = 0;
-            double odd = 0;
 
-            for (double i = 1; i <= N; i++)
+            return arr;
+        }
+
+        public static int[] Task11(int N)
+        {
+            int temp = 0;
+            int number = 0;
+            int even = 0;
+            int odd = 0;
+            int count = 0;
+            int[] arr = new int[N];
+            for (int i = 1; i <= N; i++)
             {
-                if (i % 2 == 0)
+                number = i;
+                while (number != 0)
                 {
-                    Even = Even + i;
+                    temp = number % 10;
+                    if ((temp % 2) == 0)
+                    {
+                        even = even + temp;
+                    }
+
+                    else
+                    {
+                        odd = odd + temp;
+                    }
+
+                    number = number / 10;
                 }
+
+                if (even > odd)
+                {
+                    arr[i-1] = i;
+                    count++;
+                }
+
                 else
                 {
-                    odd = odd + i;
+                    arr[i-1] = 0;
+                }
+
+                temp = 0;
+                even = 0;
+                odd = 0;
+                number = 0;
+            }
+
+            int[] output = new int[count];
+            for (int i = 0; i <= N - 1; i++)
+            {
+                if (arr[i]!=0)
+                {
+                    output[temp] = arr[i];
+                    temp++;
                 }
             }
-            if (Even >= odd)
-            {
-                Console.WriteLine("The output condition is not met.");
-            }
-            else
-            {
-                Console.WriteLine(odd);
-            }
+
+                return output;
         }
-            public static string Task12(int A, int B)
+
+        public static string Task12(int A, int B)
             {
                 int Control = 0;
 
