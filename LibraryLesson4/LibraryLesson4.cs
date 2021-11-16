@@ -12,7 +12,7 @@ namespace LibraryLesson4
                 degree = degree * A;
             }
 
-            return (degree);
+            return degree;
 
         }
 
@@ -21,9 +21,9 @@ namespace LibraryLesson4
             int box = 0;
             for (int i = 1; i <= 1000; i++)
             {
-                if ((i % A) == 0)
+                if (i % A == 0)
                 {
-                    box = box + 1;
+                    box++;
                 }
             }
 
@@ -31,7 +31,7 @@ namespace LibraryLesson4
             int[] arr = new int[box];
             for (int i = 1; i <= 1000; i++)
             {
-                if ((i % A) == 0)
+                if (i % A == 0)
                 {
                     arr[temp] = i;
                     temp++;
@@ -43,17 +43,21 @@ namespace LibraryLesson4
 
         public static double Task3(double A)
         {
-            double Conclusion = 0;
+            double count = 0;
 
             for (double i = 1; i <= A; i++)
             {
-                if (Math.Pow(i, 2) < A)
+                if (i * i < A)
                 {
-                    Conclusion = Conclusion + 1;
+                    count++;
+                }
+                else
+                {
+                    break;
                 }
             }
 
-            return (Conclusion);
+            return count;
         }
 
         public static double Task4(double A)
@@ -62,12 +66,12 @@ namespace LibraryLesson4
 
             for (double i = 1; i < (A - 1); i++)
             {
-                if ((A % i) == 0)
+                if (A % i == 0)
                 {
                     divider = i;
                 }
             }
-            return (divider);
+            return divider;
         }
 
         public static double Task5(double A, double B)
@@ -83,13 +87,13 @@ namespace LibraryLesson4
             {
                 for (i = A; i <= B; i++)
                 {
-                    if ((i % 7) == 0)
+                    if (i % 7 == 0)
                     {
                         amount = amount + i;
                     }
                 }
             }
-            return (amount);
+            return amount;
         }
 
         public static double Task6(double N)
@@ -104,7 +108,7 @@ namespace LibraryLesson4
                 n1 = n2;
                 n2 = n3;
             }
-            return (n3);
+            return n3;
 
         }
 
@@ -121,7 +125,7 @@ namespace LibraryLesson4
                     B = B % A;
                 }
             }
-            return (A + B);
+            return A + B;
         }
 
         public static double Task9(double N)
@@ -136,13 +140,14 @@ namespace LibraryLesson4
                 }
             }
 
-            return (amount);
+            return amount;
         }
 
         public static int[] Task10(int A)
         {
             int[] arr = new int[A.ToString().Length];
             int box = 0;
+
             while (A != 0)
             {
                 int number = A % 10;
@@ -162,6 +167,7 @@ namespace LibraryLesson4
             int odd = 0;
             int count = 0;
             int[] arr = new int[N];
+
             for (int i = 1; i <= N; i++)
             {
                 number = i;
@@ -231,11 +237,11 @@ namespace LibraryLesson4
                 }
                 if (Control > 0)
                 {
-                    return ("Yes");
+                    return "Yes";
                 }
                 else
                 {
-                    return ("No");
+                    return "No";
                 }
 
             }
